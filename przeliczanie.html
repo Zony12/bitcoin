@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <title>
+        Bitcoin pieniądze</title></head>
+    <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+ 
+    <style>
+        h2 {
+            text-align:center;
+        }
+        #guzik{
+            background-color: azure}
+ 
+    </style>
+<body>
+ 
+    <form id="licz"><h2 class="przelicznik">Bitcoin pieniądze</h2>
+                                <label>ILOŚĆ BITCOINÓW<input type="number" id="krypto"> </label><br>
+                                <label>WALUTA
+                                <select id="waluta">
+                                    <option value="pln">PLN</option>
+                                    <option value="euro">EUR</option>
+                                    <option value= "dolars">USD</option>
+                                    </select></label><br>
+                                <label>CENA<br><span id="cena"></span></label><br>
+ 
+ 
+                                <button type="button" id="guzik">PRZELICZ</button>
+                                </form>
+ 
+                            <script>
+                                var guzik = document.getElementById("guzik");
+                                var przelicz = function() {
+                                    var cena = document.getElementById("cena");
+                                    var krypto =document.getElementById("krypto").value;
+                                    var waluta = document.getElementById("waluta").value;
+                                    if (waluta==="pln")
+                                        {
+                                            cena.innerHTML = krypto*171989.39;
+                                        }
+                                    else if (waluta==="euro")
+                                        {
+                                            cena.innerHTML = krypto*37038.56;
+                                        }
+                                     else if (waluta==="dolars")
+                                        {
+                                            cena.innerHTML = krypto*40124.10;
+                                        }
+ 
+                                };
+                                guzik.addEventListener('click', przelicz);
+ 
+                            </script>
+</body>
+ </html>
+    
